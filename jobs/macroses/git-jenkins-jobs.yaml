@@ -1,5 +1,3 @@
----
-
 - scm:
     name: git-ui-tests
     scm:
@@ -9,9 +7,8 @@
         branches:
         - FETCH_HEAD
         refspec: ${BRANCH}
-
 - scm:
-    name: git-runner
+    name: git-api-tests
     scm:
     - git:
         url: git@github.com:LutsenkoAnna/OTUS_QA.Java.git
@@ -19,3 +16,12 @@
         branches:
         - FETCH_HEAD
         refspec: ${BRANCH}
+- scm:
+      name: git-appium-tests
+      scm:
+          - git:
+                url: git@github.com:LutsenkoAnna/OTUS_QA.Java.git
+                credentials-id: jenkins
+                branches:
+                    - FETCH_HEAD
+                refspec: ${BRANCH}
