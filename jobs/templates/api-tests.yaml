@@ -18,3 +18,12 @@
       scm:
         - git-api-tests
       script-path: jenkins/api-tests.groovy
+    publishers:
+      - allure:
+        results-paths:
+          - path: 'allure-results'
+        properties:
+          - jdk: openjdk1.8
+        commandline: allure2
+        report-build-policy: UNSTABLE
+        include-properties: true

@@ -17,11 +17,11 @@
         - FETCH_HEAD
         refspec: ${BRANCH}
 - scm:
-      name: git-appium-tests
-      scm:
-          - git:
-                url: git@github.com:LutsenkoAnna/OTUS_QA.Java.git
-                credentials-id: jenkins
-                branches:
-                    - FETCH_HEAD
-                refspec: ${BRANCH}
+    name: git-appium-tests
+    scm:
+    - git:
+        url: git@github.com:LutsenkoAnna/OTUS_QA.Java.git
+        credentials-id: jenkins
+        branches:
+        - FETCH_HEAD
+        refspec: ${BRANCH}

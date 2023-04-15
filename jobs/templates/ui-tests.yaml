@@ -13,7 +13,7 @@
       - string:
           name: BRANCH
           default: HomeWork1
-          description: Branch for tempest barbican UI tests
+          description: Branch for UI tests
       - string:
           name: BASE_URL
           default: https://otus.ru
@@ -24,12 +24,19 @@
           description: Browser name
       - string:
           name: BROWSER_VERSION
-          default: 107.0
+          default: 109.0
           description: Browser version
       - string:
           name: GRID_URL
-          default: http://127.0.0.1:4445
+          default: http://127.0.0.1:4444/wd/hub
     pipeline-scm:
-      scm:
-      - git-ui-tests
       script-path: jenkins/ui-tests.groovy
+    publishers:
+      - allure:
+        results-paths:
+          - path: 'allure-results'
+        properties:
+          - jdk: openjdk1.8
+        commandline: allure2
+        report-build-policy: UNSTABLE
+        include-properties: true
